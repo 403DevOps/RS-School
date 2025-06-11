@@ -25,7 +25,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-central-1
+          aws-region: eu-central-1
       - name: Check access AWS
         run: aws sts get-caller-identity
 
@@ -44,7 +44,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: arn:aws:iam::373527787989:role/GithubActionsRole
-          aws-region: us-east-1
+          aws-region: eu-central-1
 
       - name: Initialize Terraform
         run: terraform init
@@ -68,7 +68,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: arn:aws:iam::373527787989:role/GithubActionsRole
-          aws-region: us-east-1
+          aws-region: eu-central-1
 
       - name: Apply Terraform Changes
         run: terraform apply -auto-approve tfplan
