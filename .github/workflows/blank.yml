@@ -55,6 +55,11 @@ jobs:
 
       - name: Generate Terraform Plan
         run: terraform plan -out=tfplan
+      - name: Save tfplan Terraform
+        uses: actions/upload-artifact@v3
+        with:
+          name: tfplan
+          path: tfplan
 
   terraform-apply:
     name: Terraform Apply
@@ -77,6 +82,11 @@ jobs:
           
       - name: Check access AWS
         run: aws sts get-caller-identity
-
+        
+      - name: Download tfplan Terraform
+        uses: actions/download-artifact@v3
+        with:
+          name: tfplan
+          
       - name: Apply Terraform Changes
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve tfplan
