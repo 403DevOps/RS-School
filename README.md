@@ -28,10 +28,9 @@ aws dynamodb create-table \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
 Usage
-Terraform will automatically use this backend configuration when initializing:
 
-sh terraform init
+2. **Terraform will automatically use this backend configuration when initializing**:
 
-Ensure IAM permissions allow:
-Read/write access to the S3 bucket.
-Read/write access to the DynamoDB table.
+   ```sh 
+   terraform init
+
