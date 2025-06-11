@@ -79,4 +79,4 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Apply Terraform Changes
-        run: terraform apply -auto-approve main.tf
+        run: terraform apply -auto-approve tfplan
