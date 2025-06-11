@@ -30,10 +30,8 @@ aws dynamodb create-table \
 Usage
 Terraform will automatically use this backend configuration when initializing:
 
-sh
-terraform init
+sh terraform init
+
 Ensure IAM permissions allow:
-
 Read/write access to the S3 bucket.
-
 Read/write access to the DynamoDB table.
